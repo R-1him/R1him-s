@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إبداع ديزاين | خدمات احترافية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">إبداع<span>ديزاين</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#services">خدماتنا</a></li>
+            <li><button class="btn-nav-order" onclick="openOrderModal('عام')">طلب خدمة</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div id="vanta-canvas"></div>
+        <div class="hero-content">
+            <h1 class="reveal">نصمم لك <br><span>مستقبلاً</span> رقمياً</h1>
+            <p class="reveal delay-1">خلفية بيضاء، تصميم عصري، وأداء فائق السرعة.</p>
+            <a href="#services" class="btn-main">رؤية الخدمات</a>
+        </div>
+    </header>
+
+    <section class="services" id="services">
+        <h2 class="section-title reveal">خدماتنا</h2>
+        <div class="grid">
+            <div class="card reveal" onclick="openOrderModal('تصميم واجهات أمامية')">
+                <div class="icon-box"><i class="fas fa-code"></i></div>
+                <h3>تصميم واجهات أمامية</h3>
+                <p>برمجة واجهات احترافية وسريعة بأحدث التقنيات.</p>
+                <span class="order-link">اطلب هذه الخدمة ←</span>
+            </div>
+            <div class="card reveal delay-1" onclick="openOrderModal('تصميم مواقع')">
+                <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
+                <h3>تصميم مواقع</h3>
+                <p>بناء مواقع متكاملة متوافقة مع جميع الأجهزة.</p>
+                <span class="order-link">اطلب هذه الخدمة ←</span>
+            </div>
+            <div class="card reveal delay-2" onclick="openOrderModal('تصميم شعارات')">
+                <div class="icon-box"><i class="fas fa-pen-nib"></i></div>
+                <h3>تصميم شعارات</h3>
+                <p>ابتكار هوية بصرية فريدة تعبر عن علامتك التجارية.</p>
+                <span class="order-link">اطلب هذه الخدمة ←</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('orderModal')">&times;</span>
+            <h2>طلب خدمة: <span id="serviceNameDisplay" style="color: #007BFF;"></span></h2>
+            <form action="https://formspree.io/f/YOUR_ID" method="POST" id="mainForm">
+                <input type="hidden" name="service_type" id="serviceInput">
+                <div class="input-group">
+                    <label>الاسم الكامل</label>
+                    <input type="text" name="name" required placeholder="أدخل اسمك">
+                </div>
+                <div class="input-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="email" required placeholder="email@example.com">
+                </div>
+                <div class="input-group">
+                    <label>تفاصيل المشروع</label>
+                    <textarea name="details" rows="4" placeholder="اشرح لنا ما تحتاجه..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">إرسال الطلب الآن</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content thank-you-box">
+            <i class="fas fa-check-circle"></i>
+            <h2>تم استلام طلبك!</h2>
+            <p>شكراً لتواصلك معنا، سنرد عليك عبر الإيميل قريباً جداً.</p>
+            <button class="btn-main" onclick="closeModal('thankYouModal')">إغلاق</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+:root {
+    --dark-blue: #0A192F;
+    --bright-blue: #007BFF; /* لون الأيقونات الأزرق */
+    --white: #FFFFFF;
+    --bg-gray: #f8f9fa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+
+/* Navbar */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 8%; background: var(--dark-blue); position: fixed;
+    width: 100%; z-index: 1000;
+}
+.logo { color: white; font-size: 24px; font-weight: bold; }
+.logo span { color: var(--bright-blue); }
+.nav-links { display: flex; list-style: none; align-items: center; }
+.nav-links li a { color: white; text-decoration: none; margin: 0 15px; }
+.btn-nav-order { background: var(--bright-blue); color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+/* Hero */
+.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; }
+#vanta-canvas { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
+.hero-content { background: rgba(255,255,255,0.9); padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.hero-content h1 span { color: var(--bright-blue); }
+.btn-main { display: inline-block; background: var(--dark-blue); color: white; padding: 12px 30px; text-decoration: none; border-radius: 30px; margin-top: 20px; cursor: pointer; border: none; }
+
+/* Services */
+.services { padding: 80px 8%; background: var(--white); text-align: center; }
+.section-title { font-size: 2.5rem; margin-bottom: 50px; color: var(--dark-blue); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+.card { 
+    padding: 40px; background: white; border: 1px solid #eee; border-radius: 15px; 
+    transition: 0.3s; cursor: pointer; text-align: center;
+}
+.card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+
+/* تعديل لون الأيقونات للأزرق */
+.icon-box i { font-size: 45px; color: var(--bright-blue); margin-bottom: 20px; }
+
+.order-link { display: block; margin-top: 15px; color: var(--bright-blue); font-weight: bold; font-size: 0.9rem; }
+
+/* Modals */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); justify-content: center; align-items: center; }
+.modal-content { background: white; padding: 35px; border-radius: 15px; width: 90%; max-width: 450px; position: relative; text-align: right; }
+.close-btn { position: absolute; top: 10px; left: 15px; font-size: 30px; cursor: pointer; }
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.input-group input, .input-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; }
+.btn-submit { width: 100%; background: var(--bright-blue); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-size: 1.1rem; font-weight: bold; }
+
+.thank-you-box i { font-size: 4rem; color: #28a745; margin-bottom: 20px; }
+
+/* Reveal Animation */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
